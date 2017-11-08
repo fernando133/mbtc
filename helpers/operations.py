@@ -31,6 +31,9 @@ class Operations:
 
     @staticmethod
     def get_params_headers(params):
+        """
+        Return the params and headers encoded within the params informed
+        """
         tapimac = TApiMac()
         mac = tapimac.get_tapi_mac(params)
         headers = tapimac.get_header(mac)
@@ -59,6 +62,19 @@ class Operations:
             'tapi_method': 'get_account_info',
             'tapi_nonce': tapi_nonce
         }
+        params, headers = self.get_params_headers(params)
+        return self.make_request(params, headers)
 
+    def get_order(self, order_id, coin_pair):
+        """
+        Get order with the informed id
+        """
+        tapi_nonce = tapi_nonce = str(int(time.time()))
+        params = {
+            'tapi_method': 'get_order',
+            'tapi_nonce': tapi_nonce,
+            'coin_pair': coin_pair,
+            'order_id': order_id
+        }
         params, headers = self.get_params_headers(params)
         return self.make_request(params, headers)
