@@ -3,7 +3,6 @@ from message.message_config import MessageConfig
 import urllib2
 import ast
 
-
 class Ticker:
     def __init__(self):
         cfg = Config()

@@ -24,6 +24,7 @@ class Operations:
             response = conn.getresponse()
             response = response.read()
             response_json = json.loads(response, object_pairs_hook=OrderedDict)
+            #return response_json
             return json.dumps(response_json, indent=4)
         finally:
             if conn:
@@ -75,6 +76,40 @@ class Operations:
             'tapi_nonce': tapi_nonce,
             'coin_pair': coin_pair,
             'order_id': order_id
+        }
+        params, headers = self.get_params_headers(params)
+        return self.make_request(params, headers)
+
+    def place_buy_order(self, quantity, coin_pair, limit_price):
+        """
+        Place a buy order with a quantity, coin_pair and limit price informed
+        The limit price is for when the value of coin_pair reach it the order
+        is executed
+        """
+        tapi_nonce = tapi_nonce = str(int(time.time()))
+        params = {
+            'tapi_method': 'place_buy_order',
+            'tapi_nonce': tapi_nonce,
+            'coin_pair': coin_pair,
+            'quantity': quantity,
+            'limit_price': limit_price
+        }
+        params, headers = self.get_params_headers(params)
+        return self.make_request(params, headers)
+
+    def place_sell_order(self, quantity, coin_pair, limit_price):
+        """
+        Place a sell order with a quantity, coin_pair and limit price informed
+        The limit price is for when the value of coin_pair reach it the order
+        is executed
+        """
+        tapi_nonce = tapi_nonce = str(int(time.time()))
+        params = {
+            'tapi_method': 'place_sell_order',
+            'tapi_nonce': tapi_nonce,
+            'coin_pair': coin_pair,
+            'quantity': quantity,
+            'limit_price': limit_price
         }
         params, headers = self.get_params_headers(params)
         return self.make_request(params, headers)
