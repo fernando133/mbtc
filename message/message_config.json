@@ -1,0 +1,7 @@
+{
+    "message-conf":{
+        "msg":{
+            "currency_not_exist"       : "The informed currency doesn't exist!"
+         }
+    }
+}

@@ -16,7 +16,8 @@ Should create the script_conf.json in the ```/conf``` folder with the ```API Key
             "id"           : "ID",
             "request_path" : "/tapi/v3/",
             "request_host" : "www.mercadobitcoin.net"
-            "ticker_url"   : "https://www.mercadobitcoin.net/api/BTC/ticker/"
+            "ticker_btc"   : "https://www.mercadobitcoin.net/api/BTC/ticker/",
+            "ticker_ltc"   : "https://www.mercadobitcoin.net/api/LTC/ticker/"
          }
     }
 }
