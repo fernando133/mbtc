@@ -1,4 +1,4 @@
-# ms-mbtc
+# mbtc
 Controll Interface for business API from Mercado Bitcoin:
 <br/>```https://www.mercadobitcoin.com.br/trade-api/#comunicação-com-a-api```
 
