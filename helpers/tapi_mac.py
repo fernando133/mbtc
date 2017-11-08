@@ -16,7 +16,6 @@ class TApiMac:
         self.MB_TAPI_SECRET = cfg.get_mbtc_env('secret')
         self.MB_TAPI_ID     = cfg.get_mbtc_env('id')
 
-
     def get_tapi_mac(self, params):
         """
         Return the tapi_mac to the requests within
