@@ -42,7 +42,7 @@ class Operations:
             response = response.read()
             response_json = json.loads(response, object_pairs_hook=OrderedDict)
             return json.dumps(response_json, indent=4)
-            print "status: %s" % response_json['status_code']
+            #print "status: %s" % response_json['status_code']
             # print(json.dumps(response_json, indent=4))
         finally:
             if conn:
@@ -66,9 +66,9 @@ class Operations:
             response = conn.getresponse()
             response = response.read()
             response_json = json.loads(response, object_pairs_hook=OrderedDict)
-            return json.dumps(response_json, indent=4), 
+            return json.dumps(response_json, indent=4)
             #print "status: %s" % response_json['status_code']
-            # print(json.dumps(response_json, indent=4))
+            #print(json.dumps(response_json, indent=4))
         finally:
             if conn:
                 conn.close()
