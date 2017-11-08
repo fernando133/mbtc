@@ -14,6 +14,21 @@ class Operations:
         self.REQUEST_HOST = cfg.get_mbtc_env('request_host')
         self.REQUEST_PATH = cfg.get_mbtc_env('request_path')
 
+    def make_request(self, params, headers):
+        """
+        Make POST request for Mercado Bitcoin API with the params and headers informed
+        """
+        try:
+            conn = httplib.HTTPSConnection(self.REQUEST_HOST)
+            conn.request("POST", self.REQUEST_PATH, params, headers)
+            response = conn.getresponse()
+            response = response.read()
+            response_json = json.loads(response, object_pairs_hook=OrderedDict)
+            return json.dumps(response_json, indent=4)
+        finally:
+            if conn:
+                conn.close()
+
     @staticmethod
     def get_params_headers(params):
         tapimac = TApiMac()
@@ -32,21 +47,8 @@ class Operations:
             'tapi_nonce': tapi_nonce,
             'coin_pair': str(coin_pair)
         }
-
         params, headers = self.get_params_headers(params)
-
-        try:
-            conn = httplib.HTTPSConnection(self.REQUEST_HOST)
-            conn.request("POST", self.REQUEST_PATH, params, headers)
-            response = conn.getresponse()
-            response = response.read()
-            response_json = json.loads(response, object_pairs_hook=OrderedDict)
-            return json.dumps(response_json, indent=4)
-            #print "status: %s" % response_json['status_code']
-            # print(json.dumps(response_json, indent=4))
-        finally:
-            if conn:
-                conn.close()
+        return self.make_request(params, headers)
 
     def get_account_info(self):
         """
@@ -59,16 +61,4 @@ class Operations:
         }
 
         params, headers = self.get_params_headers(params)
-
-        try:
-            conn = httplib.HTTPSConnection(self.REQUEST_HOST)
-            conn.request("POST", self.REQUEST_PATH, params, headers)
-            response = conn.getresponse()
-            response = response.read()
-            response_json = json.loads(response, object_pairs_hook=OrderedDict)
-            return json.dumps(response_json, indent=4)
-            #print "status: %s" % response_json['status_code']
-            #print(json.dumps(response_json, indent=4))
-        finally:
-            if conn:
-                conn.close()
+        return self.make_request(params, headers)
