@@ -10,8 +10,7 @@
             "222"               : "Minimun quantity (0,001 BTC) or maximum exceeded.",
             "223"               : "Minimun quantity (0,009 LTC) or maximum exceeded.",
             "224"               : "Minimun unit price (R$ 0,01) or maximum exceeded.",
-            "227"               : "Number of decimal places reported invalid.",
-
+            "227"               : "Number of decimal places reported invalid."
          }
     }
 }
