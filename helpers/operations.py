@@ -113,3 +113,17 @@ class Operations:
         }
         params, headers = self.get_params_headers(params)
         return self.make_request(params, headers)
+
+    def cancel_order(self, order_id, coin_pair):
+        tapi_nonce = tapi_nonce = str(int(time.time()))
+        """
+        Cancel a specific order with the informed id and coin pair
+        """
+        params = {
+            'tapi_method': 'cancel_order',
+            'tapi_nonce': tapi_nonce,
+            'coin_pair':  coin_pair,
+            'order_id': order_id
+        }
+        params, headers = self.get_params_headers(params)
+        return self.make_request(params, headers)
