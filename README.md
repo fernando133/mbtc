@@ -31,10 +31,10 @@ from helpers.operations import Operations
 op = Operations()
 ```
 #### list_orders(coin_pair):
-Expet: ```BRLBTC``` or ```BRLLTC```
+coin_pair (String): ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
 
 ```
-print op.list_orders('BRLBTC')
+op.list_orders('BRLBTC')
 ```
 ##### output
 
