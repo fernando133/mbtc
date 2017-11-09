@@ -276,3 +276,36 @@ op.place_sell_order(1.0333, 'BRLBTC', 1300.00001)
     "server_unix_timestamp": "1453835329"
 }
 ```
+
+#### cancel_order(order_id, coin_pair)
+* order_id (int)    : ```44420213```
+* coin_pair (String): ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
+
+```
+op.cancel_order(44420213 , 'BRLBTC')
+```
+##### output:
+
+```
+{
+    "response_data": {
+        "order": {
+            "order_id": 44420213, 
+            "coin_pair": "BRLBTC", 
+            "order_type": 2, 
+            "status": 3, 
+            "has_fills": false, 
+            "quantity": "0.01588000", 
+            "limit_price": "25900.00000", 
+            "executed_quantity": "0.00000000", 
+            "executed_price_avg": "0.00000", 
+            "fee": "0.00000000", 
+            "created_timestamp": "1510224727", 
+            "updated_timestamp": "1510228668", 
+            "operations": []
+        }
+    }, 
+    "status_code": 100, 
+    "server_unix_timestamp": "1510228668"
+}
+```
