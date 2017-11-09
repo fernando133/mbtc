@@ -27,8 +27,10 @@ Should create the script_conf.json in the ```/conf``` folder with the ```API Key
 
 ```
 from helpers.operations import Operations
+from helpers.ticker import Ticker
 
-op = Operations()
+op = Operations() 
+tc = Ticker() 
 ```
 #### list_orders(coin_pair)
 * coin_pair (String): ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
@@ -193,5 +195,44 @@ op.get_order(1167022 , 'BRLLTC')
     }, 
     "status_code": 100, 
     "server_unix_timestamp": "1510227061"
+}
+```
+#### place_buy_order(quantity, coin_pair, limit_price)
+* quantity (double)    : ```0.01```
+* coin_pair (String)   : ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
+* limit_price (double) : ```1200.001```
+```
+op.place_buy_order(0.01, 'BRLBTC', 1200.001)
+```
+##### output:
+```
+{
+    "response_data": {
+        "order": {
+            "order_id": 3,
+            "coin_pair": "BRLBTC",
+            "order_type": 1,
+            "status": 4,
+            "has_fills": true,
+            "quantity": "1.00000000",
+            "limit_price": "900.00000",
+            "executed_quantity": "1.00000000",
+            "executed_price_avg": "900.00000",
+            "fee": "0.00300000",
+            "created_timestamp": "1453835329",
+            "updated_timestamp": "1453835329",
+            "operations": [
+                {
+                    "operation_id": 1,
+                    "quantity": "1.00000000",
+                    "price": "900.00000",
+                    "fee_rate": "0.30",
+                    "executed_timestamp": "1453835329"
+                }
+            ]
+        }
+    },
+    "status_code": 100,
+    "server_unix_timestamp": "1453835329"
 }
 ```
