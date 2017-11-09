@@ -31,6 +31,10 @@ class Operations:
                 conn.close()
 
     @staticmethod
+    def get_instant():
+        return str(int(time.time()))
+
+    @staticmethod
     def get_params_headers(params):
         """
         Return the params and headers encoded within the params informed
@@ -45,7 +49,7 @@ class Operations:
         """
         List all orders by the coin_pair informed (Ex: 'BRLBTC')
         """
-        tapi_nonce = tapi_nonce = str(int(time.time()))
+        tapi_nonce = self.get_instant()
         params = {
             'tapi_method': 'list_orders',
             'tapi_nonce': tapi_nonce,
@@ -58,7 +62,7 @@ class Operations:
         """
         Get balance of all cryptocurrency of the account
         """
-        tapi_nonce = tapi_nonce = str(int(time.time()))
+        tapi_nonce = self.get_instant()
         params = {
             'tapi_method': 'get_account_info',
             'tapi_nonce': tapi_nonce
@@ -70,7 +74,7 @@ class Operations:
         """
         Get order with the informed id
         """
-        tapi_nonce = tapi_nonce = str(int(time.time()))
+        tapi_nonce = self.get_instant()
         params = {
             'tapi_method': 'get_order',
             'tapi_nonce': tapi_nonce,
@@ -86,7 +90,7 @@ class Operations:
         The limit price is for when the value of coin_pair reach it the order
         is executed
         """
-        tapi_nonce = tapi_nonce = str(int(time.time()))
+        tapi_nonce = self.get_instant()
         params = {
             'tapi_method': 'place_buy_order',
             'tapi_nonce': tapi_nonce,
@@ -103,7 +107,7 @@ class Operations:
         The limit price is for when the value of coin_pair reach it the order
         is executed
         """
-        tapi_nonce = tapi_nonce = str(int(time.time()))
+        tapi_nonce = self.get_instant()
         params = {
             'tapi_method': 'place_sell_order',
             'tapi_nonce': tapi_nonce,
@@ -115,10 +119,10 @@ class Operations:
         return self.make_request(params, headers)
 
     def cancel_order(self, order_id, coin_pair):
-        tapi_nonce = tapi_nonce = str(int(time.time()))
         """
         Cancel a specific order with the informed id and coin pair
         """
+        tapi_nonce = self.get_instant()
         params = {
             'tapi_method': 'cancel_order',
             'tapi_nonce': tapi_nonce,
