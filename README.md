@@ -148,3 +148,50 @@ op.get_account_info()
     "server_unix_timestamp": "1510226543"
 }
 ```
+
+#### get_order(order_id, coin_pair)
+* order_id (int)    : ```1167022```
+* coin_pair (String): ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
+
+```
+op.get_order(1167022 , 'BRLLTC')
+```
+##### output:
+```
+{
+    "response_data": {
+        "order": {
+            "order_id": 1167022, 
+            "coin_pair": "BRLLTC", 
+            "order_type": 1, 
+            "status": 4, 
+            "has_fills": true, 
+            "quantity": "1.03673760", 
+            "limit_price": "192.99001", 
+            "executed_quantity": "1.03673760", 
+            "executed_price_avg": "192.99001", 
+            "fee": "0.00725716", 
+            "created_timestamp": "1510067695", 
+            "updated_timestamp": "1510067696", 
+            "operations": [
+                {
+                    "operation_id": 361303, 
+                    "quantity": "0.51781556", 
+                    "price": "192.98000", 
+                    "fee_rate": "0.70", 
+                    "executed_timestamp": "1510067696"
+                }, 
+                {
+                    "operation_id": 361304, 
+                    "quantity": "0.51892204", 
+                    "price": "193.00000", 
+                    "fee_rate": "0.70", 
+                    "executed_timestamp": "1510067696"
+                }
+            ]
+        }
+    }, 
+    "status_code": 100, 
+    "server_unix_timestamp": "1510227061"
+}
+```
