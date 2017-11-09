@@ -236,3 +236,43 @@ op.place_buy_order(0.01, 'BRLBTC', 1200.001)
     "server_unix_timestamp": "1453835329"
 }
 ```
+
+#### place_sell_order(quantity, coin_pair, limit_price)
+* quantity (double)    : ```1.0333```
+* coin_pair (String)   : ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
+* limit_price (double) : ```1300.00001```
+```
+op.place_sell_order(1.0333, 'BRLBTC', 1300.00001)
+```
+##### output:
+```
+{
+    "response_data": {
+        "order": {
+            "order_id": 3,
+            "coin_pair": "BRLBTC",
+            "order_type": 2,
+            "status": 4,
+            "has_fills": true,
+            "quantity": "1.00000000",
+            "limit_price": "900.00000",
+            "executed_quantity": "1.00000000",
+            "executed_price_avg": "900.00000",
+            "fee": "6.30000000",
+            "created_timestamp": "1453835329",
+            "updated_timestamp": "1453835329",
+            "operations": [
+                {
+                    "operation_id": 1,
+                    "quantity": "1.00000000",
+                    "price": "900.00000",
+                    "fee_rate": "0.70",
+                    "executed_timestamp": "1453835329"
+                }
+            ]
+        }
+    },
+    "status_code": 100,
+    "server_unix_timestamp": "1453835329"
+}
+```
