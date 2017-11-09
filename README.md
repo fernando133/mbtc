@@ -2,7 +2,7 @@
 Controll Interface for business API from Mercado Bitcoin:
 <br/>```https://www.mercadobitcoin.com.br/trade-api/#comunicação-com-a-api```
 
-The project will become a lib to who want`s automate the trading process of BTC and LTC cryptocurrencies in Brazil 
+The project is for who want to automate the trading process of BTC and LTC cryptocurrencies in Brazil 
 
 ## script_conf.json
 
