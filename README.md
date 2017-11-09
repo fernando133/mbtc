@@ -30,13 +30,13 @@ from helpers.operations import Operations
 
 op = Operations()
 ```
-#### list_orders(coin_pair):
+#### list_orders(coin_pair)
 * coin_pair (String): ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
 
 ```
 op.list_orders('BRLBTC')
 ```
-##### output
+##### output:
 
 ```
 {
@@ -92,5 +92,59 @@ op.list_orders('BRLBTC')
     }, 
     "status_code": 100, 
     "server_unix_timestamp": "1510138289"
+}
+```
+
+#### get_account_info()
+```
+op.get_account_info()
+```
+##### output:
+
+```
+{
+    "response_data": {
+        "balance": {
+            "brl": {
+                "available": "0.00322", 
+                "total": "0.00322"
+            }, 
+            "btc": {
+                "available": "0.01588714", 
+                "total": "0.03176714", 
+                "amount_open_orders": 1
+            }, 
+            "ltc": {
+                "available": "0.98583252", 
+                "total": "0.98583252", 
+                "amount_open_orders": 0
+            }, 
+            "bch": {
+                "available": "0.00000282", 
+                "total": "0.00000282", 
+                "amount_open_orders": 0
+            }
+        }, 
+        "withdrawal_limits": {
+            "brl": {
+                "available": "20000.00", 
+                "total": "20000.00"
+            }, 
+            "btc": {
+                "available": "25.00000000", 
+                "total": "25.00000000"
+            }, 
+            "ltc": {
+                "available": "500.00000000", 
+                "total": "500.00000000"
+            }, 
+            "bch": {
+                "available": "25.00000000", 
+                "total": "25.00000000"
+            }
+        }
+    }, 
+    "status_code": 100, 
+    "server_unix_timestamp": "1510226543"
 }
 ```
