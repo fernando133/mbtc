@@ -1,7 +1,17 @@
 {
     "message-conf":{
         "msg":{
-            "currency_not_exist"       : "The informed currency doesn't exist!"
+            "currency_not_exist": "The informed currency doesn't exist!",
+            "211"               : "Attempt to acess a persistent method with a *read-only* key",
+            "205"               : "invalid *coin_pair* value",
+            "207"               : "Balance in Reais is insufficient to perform the operation.",
+            "215"               : "Balance in Bitcoin is insufficient to perform the operation.",
+            "216"               : "Balance in Litecoin is insufficient to perform the operation.",
+            "222"               : "Minimun quantity (0,001 BTC) or maximum exceeded.",
+            "223"               : "Minimun quantity (0,009 LTC) or maximum exceeded.",
+            "224"               : "Minimun unit price (R$ 0,01) or maximum exceeded.",
+            "227"               : "Number of decimal places reported invalid.",
+
          }
     }
 }
