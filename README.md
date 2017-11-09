@@ -29,15 +29,15 @@ Should create the script_conf.json in the ```/conf``` folder with the ```API Key
 from helpers.operations import Operations
 
 op = Operations()
-
-
 ```
 #### list_orders(coin_pair):
+
+coin_pair: String
+expet: ```BRLBTC``` or ```BRLLTC```
 
 ```
 print op.list_orders('BRLBTC')
 ```
-
 ##### output
 
 ```
