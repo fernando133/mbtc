@@ -23,14 +23,12 @@ Should create the script_conf.json in the ```/conf``` folder with the ```API Key
 }
 ```
 
-## Usage example (main.py):
+## Usage example of ```helpers/operations.py```:
 
 ```python
 from helpers.operations import Operations
-from helpers.ticker import Ticker
 
 op = Operations() 
-tc = Ticker() 
 ```
 #### list_orders(coin_pair)
 * coin_pair (String): ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
@@ -308,4 +306,22 @@ op.cancel_order(44420213 , 'BRLBTC')
     "status_code": 100, 
     "server_unix_timestamp": "1510228668"
 }
+```
+
+## Usage example of ```helpers/ticker.py```:
+
+```python
+from helpers.ticker import Ticker
+
+tc = Ticker()
+```
+
+#### get_info(self, coin)
+* coin (String): ``` 'BTC' ``` or ``` 'LTC' ```
+
+```print tc.get_info('BTC')```
+
+##### output:
+```python
+{'ticker': {'sell': '25348.00001000', 'buy': '25348.00000000', 'last': '25348.00001000', 'vol': '716.75193615', 'high': '25900.00000000', 'low': '24500.01001000', 'date': 1510235763}}
 ```
