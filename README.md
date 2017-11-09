@@ -8,14 +8,14 @@ The project is for who want to automate the trading process of BTC and LTC crypt
 
 Should create the script_conf.json in the ```/conf``` folder with the ```API Key``` and ```ID``` of the account
 
-```
+```json
 {
     "script-conf":{
         "mbtc":{
             "secret"       : "API_KEY", 
             "id"           : "ID",
             "request_path" : "/tapi/v3/",
-            "request_host" : "www.mercadobitcoin.net"
+            "request_host" : "www.mercadobitcoin.net",
             "ticker_btc"   : "https://www.mercadobitcoin.net/api/BTC/ticker/",
             "ticker_ltc"   : "https://www.mercadobitcoin.net/api/LTC/ticker/"
          }
@@ -25,7 +25,7 @@ Should create the script_conf.json in the ```/conf``` folder with the ```API Key
 
 ## Usage example (main.py):
 
-```
+```python
 from helpers.operations import Operations
 from helpers.ticker import Ticker
 
@@ -35,12 +35,12 @@ tc = Ticker()
 #### list_orders(coin_pair)
 * coin_pair (String): ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
 
-```
+```python
 op.list_orders('BRLBTC')
 ```
 ##### output:
 
-```
+```json
 {
     "response_data": {
         "orders": [
@@ -98,12 +98,12 @@ op.list_orders('BRLBTC')
 ```
 
 #### get_account_info()
-```
+```python
 op.get_account_info()
 ```
 ##### output:
 
-```
+```json
 {
     "response_data": {
         "balance": {
@@ -155,11 +155,11 @@ op.get_account_info()
 * order_id (int)    : ```1167022```
 * coin_pair (String): ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
 
-```
+```python
 op.get_order(1167022 , 'BRLLTC')
 ```
 ##### output:
-```
+```json
 {
     "response_data": {
         "order": {
@@ -201,11 +201,11 @@ op.get_order(1167022 , 'BRLLTC')
 * quantity (double)    : ```0.01```
 * coin_pair (String)   : ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
 * limit_price (double) : ```1200.001```
-```
+```python
 op.place_buy_order(0.01, 'BRLBTC', 1200.001)
 ```
 ##### output:
-```
+```json
 {
     "response_data": {
         "order": {
@@ -241,11 +241,11 @@ op.place_buy_order(0.01, 'BRLBTC', 1200.001)
 * quantity (double)    : ```1.0333```
 * coin_pair (String)   : ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
 * limit_price (double) : ```1300.00001```
-```
+```python
 op.place_sell_order(1.0333, 'BRLBTC', 1300.00001)
 ```
 ##### output:
-```
+```json
 {
     "response_data": {
         "order": {
@@ -281,12 +281,12 @@ op.place_sell_order(1.0333, 'BRLBTC', 1300.00001)
 * order_id (int)    : ```44420213```
 * coin_pair (String): ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
 
-```
+```python
 op.cancel_order(44420213 , 'BRLBTC')
 ```
 ##### output:
 
-```
+```json
 {
     "response_data": {
         "order": {
