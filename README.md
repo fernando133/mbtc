@@ -316,7 +316,7 @@ from helpers.ticker import Ticker
 tc = Ticker()
 ```
 
-#### get_info(self, coin)
+#### get_info(coin)
 * coin (String): ``` 'BTC' ``` or ``` 'LTC' ```
 
 ```print tc.get_info('BTC')```
