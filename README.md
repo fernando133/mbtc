@@ -31,9 +31,7 @@ from helpers.operations import Operations
 op = Operations()
 ```
 #### list_orders(coin_pair):
-
-coin_pair: String
-expet: ```BRLBTC``` or ```BRLLTC```
+Expet: ```BRLBTC``` or ```BRLLTC```
 
 ```
 print op.list_orders('BRLBTC')
