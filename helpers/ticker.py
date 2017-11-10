@@ -13,7 +13,7 @@ class Ticker:
     def get_info(self, coin):
         """
         Get real time info about prices and volume of a informed coin
-        the method accept as input 'BTC' or 'LTC'
+        the method accept as input 'BTC', 'LTC' or 'BCH'
         For more information see ticker at:
         https://www.mercadobitcoin.com.br/api-doc/#method_trade_api_ticker
         """
@@ -22,6 +22,8 @@ class Ticker:
             url = self.ticker_btc
         elif coin == 'LTC':
             url = self.ticker_ltc
+        elif coin == 'BCH':
+            url = self.ticker_bch
         else:
             return self.msg_cfg.get_msg_env('currency_not_exist')
         content = urllib2.urlopen(url)

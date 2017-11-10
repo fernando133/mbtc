@@ -1,8 +1,8 @@
 # mbtc
-Controll Interface for business API from Mercado Bitcoin:
+Controll Interface for Mercado Bitcoin Trade API:
 <br/>```https://www.mercadobitcoin.com.br/trade-api/#comunicação-com-a-api```
 
-The project is for who want to automate the trading process of BTC and LTC cryptocurrencies in Brazil 
+The project is for who want to automate the trading process of BTC (Bitcoin), LTC (Litecoin), BCH (Bitcoin Cash) cryptocurrencies in Brazil 
 
 ## script_conf.json
 
@@ -17,7 +17,8 @@ Should create the script_conf.json in the ```/conf``` folder with the ```API Key
             "request_path" : "/tapi/v3/",
             "request_host" : "www.mercadobitcoin.net",
             "ticker_btc"   : "https://www.mercadobitcoin.net/api/BTC/ticker/",
-            "ticker_ltc"   : "https://www.mercadobitcoin.net/api/LTC/ticker/"
+            "ticker_ltc"   : "https://www.mercadobitcoin.net/api/LTC/ticker/",
+            "ticker_ltc"   : "https://www.mercadobitcoin.net/api/BCH/ticker/"
          }
     }
 }
@@ -31,7 +32,7 @@ from helpers.operations import Operations
 op = Operations() 
 ```
 #### list_orders(coin_pair)
-* coin_pair (String): ``` 'BRLBTC' ``` or ``` 'BRLLTC' ```
+* coin_pair (String): ``` 'BRLBTC' ```, ``` 'BRLLTC' ```, ``` 'BRLBCH' ```
 
 ```python
 op.list_orders('BRLBTC')
@@ -317,7 +318,7 @@ tc = Ticker()
 ```
 
 #### get_info(coin)
-* coin (String): ``` 'BTC' ``` or ``` 'LTC' ```
+* coin (String): ``` 'BTC' ```, ``` 'LTC' ```, ```BCH```
 
 ```print tc.get_info('BTC')```
 
