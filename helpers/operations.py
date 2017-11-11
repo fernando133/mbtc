@@ -47,7 +47,7 @@ class Operations:
 
     def list_orders(self, coin_pair):
         """
-        List all orders by the coin_pair informed (Ex: 'BRLBTC')
+        List all orders by the coin_pair informed (Ex: 'BRLBTC', 'BRLLTC', 'BRLBCH')
         """
         tapi_nonce = self.get_instant()
         params = {
