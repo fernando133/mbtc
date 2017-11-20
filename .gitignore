@@ -1,5 +1,6 @@
 *_conf.json
 *.pyc
 .ipynb_checkpoints
+.csv
 
 main.py
